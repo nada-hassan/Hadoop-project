@@ -1,0 +1,41 @@
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+tr:hover {background-color: coral;}
+</style>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Service Names</th>
+            <th>Mean CPU</th>
+            <th>Mean Disk</th>
+            <th>Mean RAM</th>
+            <th>CPU Peak time</th> 
+            <th>RAM Peak time</th>
+            <th>Disk Peak time</th>
+            <th>#Health messages</th>       
+        </tr>
+    </thead>
+    <tbody>
+        {% for service in all_data %}
+        <tr>
+            <td>{{ service.name }}</td>
+            <td>{{ service.cpu }}</td>
+            <td>{{ service.ram }}</td>
+            <td>{{ service.disk }}</td>
+            <td>{{ service.cpu_time }}</td>
+            <td>{{ service.ram_time }}</td>
+            <td>{{ service.disk_time }}</td>
+            <td>{{ service.count }}</td>
+        </tr>
+        {% endfor %}
+        <!-- <button  class="btn btn-info"><a href="http://localhost:8000">Submit</a></button> -->
+    </tbody>

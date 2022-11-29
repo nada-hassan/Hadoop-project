@@ -1,0 +1,49 @@
+{% extends "poll/base.html" %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block main %}
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Create Analytics</h3>
+            </div>
+            <form method="POST">
+                {% csrf_token %}
+               <div class="panel-body">
+                   <div class="row">
+                       <div class="col-lg-4">
+                           <div class="form-group">
+                               <label for="start_date">Start date&nbsp;&nbsp;‏
+                                ‏
+                            </label>
+                               <input type="date" id="start" name="start" value="{{poll.start_date|date:'m-d-Y'}}">
+                           </div>
+                       </div>
+                    </div>
+
+                    <div class="row">
+                       <div class="col-lg-4">
+                           <div class="form-group">
+                               <label for="end_date">End date&nbsp;&nbsp;&nbsp;‏
+                                ‏
+                                ‏
+                            </label>
+                               <input type="date" id="end" name="end" value="{{poll.end_date|date:'m-d-Y'}}">
+                           </div>
+                       </div>
+                   </div>
+
+                   <div class="row">
+                       <hr />
+                       <div class="col-lg-4">
+                           <button type="submit" class="btn btn-info">Submit</button>
+                       </div>
+                   </div>
+               </div>
+           </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
