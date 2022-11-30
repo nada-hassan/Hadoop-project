@@ -97,4 +97,4 @@ Building a system that can handle massive amounts of data in an efficient, distr
 ### Assumptions and design decisions
 - Batch views partitioned on service names which gives us 4 batch views as we have 4 services and each service is sorted according to datetime
 - Recomputational BatchView
-
+-------------------------
